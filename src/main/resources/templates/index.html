@@ -21,6 +21,9 @@
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 		<a class="navbar-brand" href="#">EMP System</a>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">DEP System</a>
+		</nav>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -35,7 +38,8 @@
 				</a></li>
 				<li class="nav-item active"><a class="nav-link" href="addemp">Add
 						EMP</a></li>
-
+<li class="nav-item active"><a class="nav-link" href="addemp">Add
+						DEP</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -64,6 +68,18 @@
 				</tr>
 			</thead>
 			<tbody>
+			
+	<div class="container p-5">
+		<table class="table table-striped" border="1">
+			<thead class="bg-primary text-white">
+				<tr>
+					<th scope="col">depId</th>
+					<th scope="col">depName</th>
+					</tr>
+					</thead>
+					</table>
+					</div>
+			
 				<tr th:each="e : ${emp}">
 					<th th:text="${e.id}">1</th>
 					<td th:text="${e.name}"></td>
@@ -80,6 +96,14 @@
 		</table>
 
 	</div>
+	<tr th:each="e : ${dep}">
+					<th th:text="${d.id}">1</th>
+					<td th:text="${d.name}"></td>
+					<td><a class="btn btn-sm btn-primary"
+						th:href="@{/edit/{id}(id=${d.id})}">Edit</a> <a
+						class="btn btn-sm btn-danger"
+						th:href="@{/delete/{id}(id=${d.id})}">Delete</a></td>
+</tr>
 
 	<div class="container">
 
