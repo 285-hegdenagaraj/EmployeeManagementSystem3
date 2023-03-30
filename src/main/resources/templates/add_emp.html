@@ -38,7 +38,8 @@
 						<li class="nav-item active"><a class="nav-link" href="addemp">Add
 						DEP</a></li>
 						
-
+<li class="nav-item active"><a class="nav-link" href="addemp">Add
+						LOGIN</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -106,6 +107,26 @@
 							</div>
 							</div>
 	</div>
-							
+			
+			<div class="col-md-4 offset-md-2">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="text-center text-primary">Add Login</h4>
+
+						<form th:action="@{/register}" method="post">
+	
+	                      <div class="form-group">
+								<label>Enter Employee ID</label> <input type="text"
+									class="form-control" name="name">
+									</div>
+									  <div class="form-group">
+								<label>Enter Your Location</label> <input type="text"
+									class="form-control" name="name">
+									</div>
+									<button class="btn btn-primary btn-block">Submit</button>
+							</div>
+							</div>
+							</div>	
+										
 </body>
 </html>
