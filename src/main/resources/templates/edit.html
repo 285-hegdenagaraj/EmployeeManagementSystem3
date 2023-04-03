@@ -39,6 +39,7 @@
 				<li class="nav-item active"><a class="nav-link" href="">Add
 						DEP</a></li>
 
+
 			</ul>
 		</div>
 	</nav>
@@ -117,7 +118,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4 offset-md-2">
+			<div class="col-md-6 offset-md-3">
 				<div class="card">
 					<div class="card-body">
 						<h4 class="text-center text-primary">Edit Login</h4>
@@ -140,18 +141,78 @@
 		</div>
 	</div>
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous"></script>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="text-center text-primary">Edit Cases</h4>
+						<form th:action="@{/update}" method="post" th:object="${login}">
+							<input type="hidden" th:value="${login.id}" name="id">
+
+							<div class="form-group">
+								<label>No Cases Found</label> <input type="text"
+									class="form-control" name="name" th:value="${case.id}">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="text-center text-primary">Edit Leaves</h4>
+						<form th:action="@{/update}" method="post" th:object="${leave}">
+							<input type="hidden" th:value="${leave.id}" name="id">
+
+							<div class="form-group">
+								<label>Enter EmployeeId></label> <input type="text"
+									class="form-control" name="name" th:value="${leave.id}">
+							</div>
+
+
+
+							<div class="form-group">
+								<label>Enter LeaveType</label> <input type="text"
+									class="form-control" name="leavetype"
+									th:value="${leave.leavetype}">
+							</div>
+
+							<div class="form-group">
+								<label>Enter Date</label> <input type="date"
+									class="form-control" name="date" th:value="${leave.date}">
+							</div>
+
+
+							<div class="form-group">
+								<label>Enter TeamEmail</label> <input type="email"
+									class="form-control" name="email" th:value="${leave.email}">
+							</div>
+
+
+							<div class="form-group">
+								<label>Enter ReasonforLeave</label> <input type="text"
+									class="form-control" name="reason th:value="${leave.ReasonforLeave}">
+							</div>
+
+							<button class="btn btn-primary btn-block">Submit</button>
+
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+
+
 </body>
 </html>
