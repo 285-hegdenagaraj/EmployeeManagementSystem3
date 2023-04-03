@@ -106,7 +106,7 @@
 
 							<div class="form-group">
 								<label>Enter Department Name</label> <input type="text"
-									class="form-control" name="name" th:value="${emp.name}">
+									class="form-control" name="name" th:value="${Dep.name}">
 							</div>
 							<button class="btn btn-primary btn-block">Submit</button>
 						</form>
@@ -127,12 +127,12 @@
 
 							<div class="form-group">
 								<label>Enter Employee Id</label> <input type="text"
-									class="form-control" name="name" th:value="${emp.id}">
+									class="form-control" name="name" th:value="${login.id}">
 							</div>
 
 							<div class="form-group">
 								<label>Enter Your Location</label> <input type="text"
-									class="form-control" name="name" th:value="${emp.id}">
+									class="form-control" name="name" th:value="${login.id}">
 							</div>
 						</form>
 					</div>
@@ -148,7 +148,7 @@
 					<div class="card-body">
 						<h4 class="text-center text-primary">Edit Cases</h4>
 						<form th:action="@{/update}" method="post" th:object="${login}">
-							<input type="hidden" th:value="${login.id}" name="id">
+							<input type="hidden" th:value="${case.id}" name="id">
 
 							<div class="form-group">
 								<label>No Cases Found</label> <input type="text"
