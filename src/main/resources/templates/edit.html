@@ -211,7 +211,28 @@
 		</div>
 
 	</div>
+<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="text-center text-primary">Edit quicklinks</h4>
+						<form th:action="@{/update}" method="post" th:object="${emp}">
+							<input type="hidden" th:value="${emp.id}" name="id">
 
+							<div class="form-group">
+								<label>Put the Link Here</label> <input type="link"
+									class="form-control" name="name" th:value="${link.name}">
+							</div>
+							
+							<button class="btn btn-primary btn-block">Submit</button>
+							
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 </body>

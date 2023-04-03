@@ -46,6 +46,8 @@
 						Cases</a></li>
 				<li class="nav-item active"><a class="nav-link" href="addemp">Apply
 						Leave</a></li>
+				<li class="nav-item active"><a class="nav-link" href="addemp">Quick
+						Links</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -96,7 +98,7 @@
 					</nav>
 				</div>
 
-								<div class="container p-5">
+				<div class="container p-5">
 					<table class="table table-striped" border="1">
 						<thead class="bg-primary text-white">
 							<tr>
@@ -106,63 +108,62 @@
 						</thead>
 					</table>
 				</div>
-				
-							<tr th:each="e : ${emp}">
-								<th th:text="${e.id}">1</th>
-								<td th:text="${e.name}"></td>
-								<td th:text="${e.address}"></td>
-								<td th:text="${e.email}"></td>
-								<td th:text="${e.phno}"></td>
-								<td th:text="${e.salary}"></td>
-								<td><a class="btn btn-sm btn-primary"
-									th:href="@{/edit/{id}(id=${e.id})}">Edit</a> <a
-									class="btn btn-sm btn-danger"
-									th:href="@{/delete/{id}(id=${e.id})}">Delete</a></td>
-							</tr>
-						</tbody>
-					</table>
 
-				</div>
-				
-					<div class="container p-5">
-					<table class="table table-striped" border="1">
-						<thead class="bg-primary text-white">
-							<tr>
-								<th scope="col">depId</th>
-								<th scope="col">depName</th>
-							</tr>
-						</thead>
-					</table>
-				</div>
-				
-				<tr th:each="e : ${dep}">
-					<th th:text="${d.id}">1</th>
-					<td th:text="${d.name}"></td>
+				<tr th:each="e : ${emp}">
+					<th th:text="${e.id}">1</th>
+					<td th:text="${e.name}"></td>
+					<td th:text="${e.address}"></td>
+					<td th:text="${e.email}"></td>
+					<td th:text="${e.phno}"></td>
+					<td th:text="${e.salary}"></td>
 					<td><a class="btn btn-sm btn-primary"
-						th:href="@{/edit/{id}(id=${d.id})}">Edit</a> <a
+						th:href="@{/edit/{id}(id=${e.id})}">Edit</a> <a
 						class="btn btn-sm btn-danger"
-						th:href="@{/delete/{id}(id=${d.id})}">Delete</a></td>
+						th:href="@{/delete/{id}(id=${e.id})}">Delete</a></td>
 				</tr>
+			</tbody>
+		</table>
 
-				<tr th:each="e : ${login}">
-					<th th:text="${l.id}">1</th>
-					<td th:text="${l.location}"></td>
+	</div>
+
+	<div class="container p-5">
+		<table class="table table-striped" border="1">
+			<thead class="bg-primary text-white">
+				<tr>
+					<th scope="col">depId</th>
+					<th scope="col">depName</th>
 				</tr>
-				
-				<div class="container p-5">
-					<table class="table table-striped" border="1">
-						<thead class="bg-primary text-white">
-							<tr>
-								<th scope="col">EmployeeId</th>
-								<th scope="col">LeaveType</th>
-								<th scope="col">Date</th>
-								<th scope="col">TeamEmail</th>
-								<th scope="col">ReasonforLeave</th>
-								<th scope="col">Action</th>
+			</thead>
+		</table>
+	</div>
 
-							</tr>
-						</thead>
-						<tbody>
+	<tr th:each="e : ${dep}">
+		<th th:text="${d.id}">1</th>
+		<td th:text="${d.name}"></td>
+		<td><a class="btn btn-sm btn-primary"
+			th:href="@{/edit/{id}(id=${d.id})}">Edit</a> <a
+			class="btn btn-sm btn-danger" th:href="@{/delete/{id}(id=${d.id})}">Delete</a></td>
+	</tr>
+
+	<tr th:each="e : ${login}">
+		<th th:text="${l.id}">1</th>
+		<td th:text="${l.location}"></td>
+	</tr>
+
+	<div class="container p-5">
+		<table class="table table-striped" border="1">
+			<thead class="bg-primary text-white">
+				<tr>
+					<th scope="col">EmployeeId</th>
+					<th scope="col">LeaveType</th>
+					<th scope="col">Date</th>
+					<th scope="col">TeamEmail</th>
+					<th scope="col">ReasonforLeave</th>
+					<th scope="col">Action</th>
+
+				</tr>
+			</thead>
+			<tbody>
 
 				<tr th:each="e : ${leave}">
 					<th th:text="${l.eid}">1</th>
