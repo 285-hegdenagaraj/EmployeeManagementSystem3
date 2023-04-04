@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.Entity.Cases;
 import com.example.Service.CaseService;
 
-
-
 @Controller
 @RequestMapping("/api/case")
 public class CaseController {

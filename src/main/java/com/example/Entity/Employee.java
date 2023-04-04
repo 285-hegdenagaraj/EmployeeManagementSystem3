@@ -1,9 +1,7 @@
 package com.example.Entity;
 
 import javax.persistence.Id;
-
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import lombok.Data;
 
 @Data
@@ -62,7 +60,7 @@ public class Employee {
 		this.salary = salary;
 	}
 	public Employee() {
-		
+
 	}
 	@Override
 	public String toString() {

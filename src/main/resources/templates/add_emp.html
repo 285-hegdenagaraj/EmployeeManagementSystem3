@@ -5,8 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Bootstrap CSS -->
+<<!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -49,6 +48,12 @@
 
 				<li class="nav-item active"><a class="nav-link" href="addemp">Quick
 						Links</a></li>
+
+				<li class="nav-item active"><a class="nav-link" href="addemp">Add
+						Salary</a></li>
+
+				<li class="nav-item active"><a class="nav-link" href="addemp">Add
+						My goals</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -233,14 +238,75 @@
 			<div class="card-body">
 				<h4 class="text-center text-primary">Add Quicklinks</h4>
 				<div class="form-group">
-								<label>Put the Link here</label> <input type="link"
-									class="form-control" name="link">
-							</div>
+					<label>Put the Link here</label> <input type="link"
+						class="form-control" name="link">
+				</div>
 				<button class="btn btn-primary btn-block">Submit</button>
-				
+
 			</div>
 		</div>
 	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="text-center text-primary">Add Salary</h4>
+
+						<form th:action="@{/register}" method="post">
+
+							<div class="form-group">
+								<label>Enter EmployeeId</label> <input type="text"
+									class="form-control" name="id">
+							</div>
+
+
+							<div class="form-group">
+								<label>Enter Name</label> <input type="text"
+									class="form-control" name="name">
+							</div>
+
+							<div class="form-group">
+								<label>Enter Salary</label> <input type="number"
+									class="form-control" name="number">
+							</div>
+
+
+							<div class="form-group">
+								<label>Enter Email</label> <input type="email"
+									class="form-control" name="email">
+							</div>
+
+
+
+							<button class="btn btn-primary btn-block">Submit</button>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-6 offset-md-3">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="text-center text-primary">Add My Goals</h4>
+
+				<form th:action="@{/register}" method="post">
+
+					<div class="form-group">
+						<label>Enter Detailed Description</label> <input type="text"
+							class="form-control" name="name">
+						<button class="btn btn-primary btn-block">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
 
 </body>
 </html>

@@ -1,9 +1,7 @@
 package com.example.Entity;
 
 import javax.persistence.Id;
-
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import lombok.Data;
 
 @Data

@@ -23,7 +23,7 @@ public class QuickLinks {
 		Link = link;
 	}
 	public QuickLinks() {
-		
+
 	}
 
 	@Override

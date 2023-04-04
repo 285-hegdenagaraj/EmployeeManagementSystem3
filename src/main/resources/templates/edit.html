@@ -5,7 +5,6 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -211,7 +210,7 @@
 		</div>
 
 	</div>
-<div class="container">
+	<div class="container">
 		<div class="row">
 			<div class="col-md-6 offset-md-3">
 				<div class="card">
@@ -224,15 +223,88 @@
 								<label>Put the Link Here</label> <input type="link"
 									class="form-control" name="name" th:value="${link.name}">
 							</div>
-							
+
 							<button class="btn btn-primary btn-block">Submit</button>
-							
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+
+							<div class="container">
+								<div class="row">
+									<div class="col-md-6 offset-md-3">
+										<div class="card">
+											<div class="card-body">
+												<h4 class="text-center text-primary">Edit Salary</h4>
+												<form th:action="@{/update}" method="post"
+													th:object="${salary}">
+													<input type="hidden" th:value="${emp.id}" name="id">
+
+													<div class="form-group">
+														<label>Enter EmployeeId</label> <input type="text"
+															class="form-control" name="name" th:value="${sal.id}">
+													</div>
+
+
+
+													<div class="form-group">
+														<label>Enter Name</label> <input type="text"
+															class="form-control" name="name" th:value="${sal.name}">
+													</div>
+
+													<div class="form-group">
+														<label>Enter Salary</label> <input type="number"
+															class="form-control" name="number"
+															th:value="${sal.number}">
+													</div>
+
+
+													<div class="form-group">
+														<label>Enter Email</label> <input type="email"
+															class="form-control" name="email th:value="${sal.email}">
+													</div>
+
+
+
+													<button class="btn btn-primary btn-block">Submit</button>
+
+												</form>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+
+
+
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="text-center text-primary">Edit My Goals</h4>
+						<form th:action="@{/update}" method="post" th:object="${mygoals}">
+							<input type="hidden" th:value="${mygoal.id}" name="id">
+
+							<div class="form-group">
+								<label>Enter Detailed Description</label> <input type="text"
+									class="form-control" name="text" th:value="${mygoal.text}">
+							</div>
+
+							<button class="btn btn-primary btn-block">Submit</button>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 </body>

@@ -5,7 +5,30 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<style>
+    body {
+        background: green;
+    }
+ 
+    h1 {
+        margin: 300px auto;
+        text-align: center;
+        color: white;
+        font-size: 8em;
+        transition: 0.5s;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+ 
+    h1:hover {
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc,
+                     0 3px 0 #ccc, 0 4px 0 #ccc,
+                     0 5px 0 #ccc, 0 6px 0 #ccc,
+                     0 7px 0 #ccc, 0 8px 0 #ccc,
+                     0 9px 0 #ccc, 0 10px 0 #ccc,
+                     0 11px 0 #ccc, 0 12px 0 #ccc,
+                     0 20px 30px rgba(0, 0, 0, 0.5);
+    }
+</style>
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -48,6 +71,10 @@
 						Leave</a></li>
 				<li class="nav-item active"><a class="nav-link" href="addemp">Quick
 						Links</a></li>
+				<li class="nav-item active"><a class="nav-link" href="addemp">Add
+						Salary</a></li>
+				<li class="nav-item active"><a class="nav-link" href="addemp">Add
+						My Goals </a></li>
 			</ul>
 		</div>
 	</nav>
@@ -98,16 +125,6 @@
 					</nav>
 				</div>
 
-				<div class="container p-5">
-					<table class="table table-striped" border="1">
-						<thead class="bg-primary text-white">
-							<tr>
-								<th scope="col">empId</th>
-								<th scope="col">Location</th>
-							</tr>
-						</thead>
-					</table>
-				</div>
 
 				<tr th:each="e : ${emp}">
 					<th th:text="${e.id}">1</th>
@@ -125,6 +142,20 @@
 		</table>
 
 	</div>
+
+	<div class="container p-5">
+		<table class="table table-striped" border="1">
+			<thead class="bg-primary text-white">
+				<tr>
+					<th scope="col">empId</th>
+					<th scope="col">Location</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+
+
 
 	<div class="container p-5">
 		<table class="table table-striped" border="1">
@@ -180,6 +211,40 @@
 		</table>
 
 	</div>
+	<div th:if=${session.msg}>
+		<div class="alert alert-success" role="alert" th:text="${session.msg}">
+		</div>
+		<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+	</div>
+
+
+	<div class="container p-5">
+		<table class="table table-striped" border="1">
+			<thead class="bg-primary text-white">
+				<tr>
+					<th scope="col">EId</th>
+					<th scope="col">Name</th>
+					<th scope="col">Salary</th>
+					<th scope="col">Email</th>
+					<th scope="col">Action</th>
+
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+
+	<tr th:each="e : ${sal}">
+		<th th:text="${s.id}">1</th>
+		<td th:text="${s.name}"></td>
+		<td th:text="${s.salary}"></td>
+		<td th:text="${e.email}"></td>
+		<td><a class="btn btn-sm btn-primary"
+			th:href="@{/edit/{id}(id=${e.id})}">Edit</a> <a
+			class="btn btn-sm btn-danger" th:href="@{/delete/{id}(id=${e.id})}">Delete</a></td>
+	</tr>
+
 
 
 

@@ -13,7 +13,6 @@ import com.example.Entity.ApplyLeave;
 import com.example.Service.LeaveService;
 
 
-
 @Controller
 @RequestMapping("/api/leave")
 public class LeaveController {
